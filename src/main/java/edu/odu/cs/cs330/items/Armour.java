@@ -151,15 +151,13 @@ public class Armour extends Equippable {
     @Override
     public String toString()
     {
-
-        // Complete this function... treat the return as a hint.
         return String.join(
             System.lineSeparator(),
             String.format("  Nme: %s", super.getName()),
             String.format("  Dur: %s", this.getDurability()),
             String.format("  Def: %s", this.getDefense()),
             String.format("  Mtl: %s", this.getMaterial()),
-            String.format("  Mdr: %s (Lvl %d)", this.getModifier(), this.getModifier()),
+            String.format("  Mdr: %s (Lvl %d)", this.getModifier(), this.getModifierLevel()),
             String.format("  Emt: %s", this.getElement()),
             ""
         );
