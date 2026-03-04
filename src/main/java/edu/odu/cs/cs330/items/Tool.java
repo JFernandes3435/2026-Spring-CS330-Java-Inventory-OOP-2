@@ -47,9 +47,11 @@ public class Tool extends Equippable {
         super();
 
         this.setName(src.name);
-
-        // Complete this function
-
+        this.setDurability(src.durability);
+        this.setSpeed(src.speed);
+        this.setMaterial(src.material);
+        this.setModifier(src.modifier);
+        this.setModifierLevel(src.modifierLevel);
     }
 
     /**
@@ -86,8 +88,10 @@ public class Tool extends Equippable {
     {
         super.name    = snr.next();
         material      = snr.next();
-
-        // Complete this function
+        durability    = Integer.valueOf(snr.next());
+        speed         = Integer.valueOf(snr.next());
+        modifier      = snr.next();
+        modifierLevel = Integer.valueOf(snr.next());
     }
 
     /**
@@ -99,8 +103,11 @@ public class Tool extends Equippable {
         Tool cpy = new Tool();
 
         cpy.setName(this.name);
-
-        // Complete this function
+        cpy.setMaterial(this.material);
+        cpy.setDurability(this.durability);
+        cpy.setSpeed(this.speed);
+        cpy.setModifier(this.modifier);
+        cpy.setModifierLevel(this.modifierLevel);
 
         return cpy;
     }
@@ -120,7 +127,9 @@ public class Tool extends Equippable {
         Tool rhsItem = (Tool) rhs;
 
         // Complete this function
-        return false;
+        return this.name.equals(rhsItem.getName()) 
+        && this.material.equals(rhsItem.getMaterial()) 
+        && this.modifier.equals(rhsItem.getModifier());
     }
 
     /**
@@ -131,7 +140,7 @@ public class Tool extends Equippable {
     public int hashCode()
     {
         // Complete this function
-        return -1;
+        return this.getName().hashCode() + this.getMaterial().hashCode() + this.getModifier().hashCode();
     }
 
     /**
