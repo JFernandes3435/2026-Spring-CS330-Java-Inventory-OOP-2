@@ -42,7 +42,14 @@ public class Armour extends Equippable {
      */
     public Armour(Armour src)
     {
-        // Complete this function.
+        super(src.name);
+
+        this.defense = src.defense;
+        this.durability = src.durability;
+        this.material = src.material;
+        this.modifier = src.modifier;
+        this.modifierLevel = src.modifierLevel;
+        this.element = src.element;
     }
 
     /**
@@ -78,8 +85,12 @@ public class Armour extends Equippable {
     public void read(Scanner snr)
     {
         super.name    = snr.next();
-
-        // Complete this function.
+        this.material = snr.next();
+        this.durability = Integer.valueOf(snr.next());
+        this.defense = Integer.valueOf(snr.next());
+        this.modifier = snr.next();
+        this.modifierLevel = Integer.valueOf(snr.next());
+        this.element = snr.next();
     }
 
     /**
