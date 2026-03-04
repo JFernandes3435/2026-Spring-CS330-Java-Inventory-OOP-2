@@ -101,7 +101,13 @@ public class Armour extends Equippable {
     {
         Armour cpy = new Armour();
 
-        // Complete this function.
+        cpy.name = this.name;
+        cpy.material = this.material;
+        cpy.durability = this.durability;
+        cpy.defense = this.defense;
+        cpy.modifier = this.modifier;
+        cpy.modifierLevel = this.modifierLevel;
+        cpy.element = this.element;
 
         return cpy;
     }
@@ -121,9 +127,10 @@ public class Armour extends Equippable {
 
         Armour rhsItem = (Armour) rhs;
 
-        // Complete this function.
-        // Remove the placeholder return
-        return false;
+        return (this.name == null ? rhsItem.name == null : this.name.equals(rhsItem.name)) 
+        && (this.material == null ? rhsItem.material == null : this.material.equals(rhsItem.material))
+        && (this.modifier == null ? rhsItem.modifier == null : this.modifier.equals(rhsItem.modifier))
+        && (this.element == null ? rhsItem.element == null : this.element.equals(rhsItem.element));
     }
 
     /**
@@ -135,7 +142,7 @@ public class Armour extends Equippable {
     {
         // Complete this function.
         // Remove the placeholder return
-        return -1;
+        return this.name.hashCode() + this.material.hashCode() + this.modifier.hashCode() + this.element.hashCode();
     }
 
     /**
@@ -149,6 +156,11 @@ public class Armour extends Equippable {
         return String.join(
             System.lineSeparator(),
             String.format("  Nme: %s", super.getName()),
+            String.format("  Dur: %s", this.getDurability()),
+            String.format("  Def: %s", this.getDefense()),
+            String.format("  Mtl: %s", this.getMaterial()),
+            String.format("  Mdr: %s (Lvl %d)", this.getModifier(), this.getModifier()),
+            String.format("  Emt: %s", this.getElement()),
             ""
         );
     }

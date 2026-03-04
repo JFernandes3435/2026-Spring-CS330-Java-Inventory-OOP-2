@@ -51,7 +51,10 @@ public class Consumable extends Item {
     {
         // Complete this function.
         // Update the call to super
-        super("[Placeholder]");
+        super(src.name);
+
+        this.effect = src.effect;
+        this.uses = src.uses;
     }
 
     /**
