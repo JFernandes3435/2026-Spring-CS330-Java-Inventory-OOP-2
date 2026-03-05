@@ -128,9 +128,9 @@ public class Armour extends Equippable {
         Armour rhsItem = (Armour) rhs;
 
         return (this.name == null ? rhsItem.name == null : this.name.equals(rhsItem.name)) 
-        && (this.material == null ? rhsItem.material == null : this.material.equals(rhsItem.material))
-        && (this.modifier == null ? rhsItem.modifier == null : this.modifier.equals(rhsItem.modifier))
-        && (this.element == null ? rhsItem.element == null : this.element.equals(rhsItem.element));
+         && (this.material == null ? rhsItem.material == null : this.material.equals(rhsItem.material))
+         && (this.modifier == null ? rhsItem.modifier == null : this.modifier.equals(rhsItem.modifier))
+         && (this.element == null ? rhsItem.element == null : this.element.equals(rhsItem.element));
     }
 
     /**
